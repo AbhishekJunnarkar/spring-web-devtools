@@ -1,6 +1,7 @@
 package com.springprojects.springweb.springwebapplication.web.service;
 
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Component
 public class LoginService {
