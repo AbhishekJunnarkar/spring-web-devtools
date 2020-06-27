@@ -19,6 +19,10 @@ public class TodoService {
 		todos.add(new Todo(1, "Abhishek", "Spring Boot", new Date(), false));
 		todos.add(new Todo(2, "Abhishek", "Spring Batch", new Date(), false));
 		todos.add(new Todo(3, "Abhishek", "Spring Cloud", new Date(), false));
+		
+		todos.add(new Todo(1, "Arnav", "Make Comic   " , new Date(), false));
+		todos.add(new Todo(2, "Arnav", "Pable's House   ", new Date(), false));
+		todos.add(new Todo(3, "Arnav", "Dinner at Shanaya  ", new Date(), false));
 	}
 
 	/**

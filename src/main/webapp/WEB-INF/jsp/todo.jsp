@@ -9,7 +9,7 @@
 <body>
 	Add todo page for ${name}
 
-	<form method="post">
+	<form method="post" modelAttribute="todo">
 		Description : <input name="desc" type="text" /><input type="submit">
 
 	</form>

@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 public class LoginService {
 
 	public boolean validateUser(String user, String password) {
-		return (user.equalsIgnoreCase("Abhishek")) && (password.equals("password"));
+		return (user.equalsIgnoreCase("Abhishek") || user.equalsIgnoreCase("Arnav"))
+				&& (password.equals("pw") || password.equals("1212"));
 	}
 
 }

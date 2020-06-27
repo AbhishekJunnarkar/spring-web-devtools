@@ -5,31 +5,41 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
+	rel="stylesheet">
 <meta charset="ISO-8859-1">
 <title>Todo's List for ${name}</title>
 </head>
 <body>
-<h1>Your Todo's list</h1>
-<table>
-	<caption>Your Todo's are</caption>
-		<thead>
-			<tr>
-				<th>Description</th>
-				<th>Target Date</th>
-				<th>Is it Done?</th>
-			</tr>
-		</thead>
-		<tbody>
-		<c:forEach items="${todos}" var="todo">
-			<tr>
-				<th>${todo.desc}</th>
-				<th>${todo.targetDate}</th>
-				<th>${todo.done}</th>
-			</tr>
-		</c:forEach>
-		</tbody>
-</table>
-<br/>
-<a href="/add-todo">Add a Todo</a>
+	<div class="container">
+		<h1>Welcome ${name}, Your Todo's list !</h1>
+		<table class="table table-striped">
+			<caption>Your Todo's are</caption>
+			<thead>
+				<tr>
+					<th>Description</th>
+					<th>Target Date</th>
+					<th>Is it Done?</th>
+					<th>Delete</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach items="${todos}" var="todo">
+					<tr>
+						<th>${todo.desc}</th>
+						<th>${todo.targetDate}</th>
+						<th>${todo.done}</th>
+						<th><a type="button" class="btn btn-warning" href="/delete-todo?id=${todo.id}">Delete</a></th>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+		<div>
+			<a class="button" href="/add-todo">Add a Todo</a>
+		</div>
+
+		<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+		<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	</div>
 </body>
 </html>
