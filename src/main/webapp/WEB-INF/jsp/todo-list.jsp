@@ -29,7 +29,8 @@
 						<th>${todo.desc}</th>
 						<th>${todo.targetDate}</th>
 						<th>${todo.done}</th>
-						<th><a type="button" class="btn btn-warning" href="/delete-todo?id=${todo.id}">Delete</a></th>
+						<th><a type="button" class="btn btn-warning"
+							href="/delete-todo?id=${todo.id}">Delete</a></th>
 					</tr>
 				</c:forEach>
 			</tbody>
@@ -37,9 +38,8 @@
 		<div>
 			<a class="button" href="/add-todo">Add a Todo</a>
 		</div>
-
-		<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
-		<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	</div>
+	<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+	<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
 </html>
