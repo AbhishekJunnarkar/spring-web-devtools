@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Service;
 
 import com.springprojects.springweb.springwebapplication.web.model.Todo;
@@ -13,16 +15,16 @@ import com.springprojects.springweb.springwebapplication.web.model.Todo;
 public class TodoService {
 	// static List of todos
 	private static List<Todo> todos = new ArrayList<Todo>();
-	private static int todoCount = 3;
+	private static int todoCount = 6;
 	// Initial TODO's
 	static {
 		todos.add(new Todo(1, "Abhishek", "Spring Boot", new Date(), false));
 		todos.add(new Todo(2, "Abhishek", "Spring Batch", new Date(), false));
 		todos.add(new Todo(3, "Abhishek", "Spring Cloud", new Date(), false));
-		
-		todos.add(new Todo(1, "Arnav", "Make Comic   " , new Date(), false));
-		todos.add(new Todo(2, "Arnav", "Pable's House   ", new Date(), false));
-		todos.add(new Todo(3, "Arnav", "Dinner at Shanaya  ", new Date(), false));
+
+		todos.add(new Todo(4, "Arnav", "Make Comic   ", new Date(), false));
+		todos.add(new Todo(5, "Arnav", "Pable's House   ", new Date(), false));
+		todos.add(new Todo(6, "Arnav", "Dinner at Shanaya  ", new Date(), false));
 	}
 
 	/**
@@ -66,5 +68,24 @@ public class TodoService {
 			}
 		}
 		return filteredTodos;
+	}
+
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 */
+	public Todo retrieveTodo(int id) {
+		for (Todo todo : todos) {
+			if (todo.getId() == id) {
+				return todo;
+			}
+		}
+		return null;
+	}
+
+	public void updateTodo(@Valid Todo todo) {
+		todos.remove(todo);
+		todos.add(todo);
 	}
 }
